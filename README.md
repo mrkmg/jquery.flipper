@@ -1,4 +1,5 @@
-=Flipper=
+Flipper
+=======
 
 Flipper is a jQuery plugin that animates changes in numbers. It uses CSS3 transitions to
 accomplish the animations. Currently it is only works on webkit browsers(Chrome/Safari).
@@ -9,20 +10,23 @@ It has 4 different modes:
 - Open: Both halves flip around from the front to the back;
 - Close: Both halves flip around from the back to the front;
 
--Configuration-
+Configuration
+-------------
 
 There are only 2 options currently. Type and Speed.
 
 - Type: fall(Default), rise, open, close
 - Speed: slow, normal(Default), fast
 
--Usage-
+Usage
+-----
 
---HTML--
+
+HTML
 
     <div id="number">0</div>
 
---JS--
+JS
 
     //Initalize
     $('#number').flipper({
@@ -41,12 +45,14 @@ There are only 2 options currently. Type and Speed.
     //Do another animation with new options set, change from 1 to 2
     $('#number').flipper('update',2);
 
--TODO-
+TODO
+----
 
 - Implement css transitions for mozilla, opera, IE, and Standard CSS3 (Non vendor specific)
 
 
--License-
+License
+-------
 
 Copyright (c) 2012 MrKMG
 
