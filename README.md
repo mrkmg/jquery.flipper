@@ -10,6 +10,11 @@ It has 4 different modes:
 - Open: Both halves flip around from the front to the back;
 - Close: Both halves flip around from the back to the front;
 
+Demo
+----
+
+You can view a demo online at (http://mrkmg.com/flipper/)[http://mrkmg.com/flipper/];
+
 Configuration
 -------------
 
