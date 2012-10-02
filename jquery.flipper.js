@@ -1,3 +1,4 @@
+/* jquery.flipper (c) MrKMG 2012 */
 (function( $ ){
 
   var methods = {
