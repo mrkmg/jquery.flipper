@@ -48,7 +48,7 @@ JS
 Styling
 --------
 
-There are 4 important classes that you can should style
+There are 4 important classes that you can/should style
 - .flipper: This is the overall object. You should set the height and width manually
 - .fl-num: This matches both the top and bottom half. Can be used to add borders or radius
 - .fl-top: Matches top half. Can be used for colors and radius
