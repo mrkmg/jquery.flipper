@@ -45,6 +45,15 @@ JS
     //Do another animation with new options set, change from 1 to 2
     $('#number').flipper('update',2);
 
+Styling
+--------
+
+There are 4 important classes that you can should style
+- .flipper: This is the overall object. You should set the height and width manually
+- .fl-num: This matches both the top and bottom half. Can be used to add borders or radius
+- .fl-top: Matches top half. Can be used for colors and radius
+- .fl-bottom: Matches bottom half. Can be used for colors and radius.
+
 TODO
 ----
 
