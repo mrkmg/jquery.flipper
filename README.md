@@ -13,7 +13,7 @@ It has 4 different modes:
 Demo
 ----
 
-You can view a demo online at (http://mrkmg.com/flipper/)[http://mrkmg.com/flipper/];
+You can view a demo online at [http://mrkmg.com/flipper/](http://mrkmg.com/flipper/);
 
 Configuration
 -------------
