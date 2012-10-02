@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flipper Demo</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script src="flipper.js"></script>
+        <link rel="stylesheet" type="text/css" href="flipper.css">
+        <script>
+        $(document).ready(function(){
+            $('#number').flipper();
+            var i=1;
+            $('#number_go').click(function(){
+                i = (i+1)%10;
+                $('#number').flipper('update',i);
+            });
+
+            $('.change').click(function(){
+                var d = $(this).data(),
+                    c = d.change,
+                    v = d.val;
+                $('#number').flipper('option',c,v);
+                $(this).parent().find('button.s.'+c).removeClass('s');
+                $(this).addClass('s');
+            })
+
+        });
+        </script>
+        <style>
+            .flipper{
+                height:120px;
+                width:80px;
+                font-size: 110px;
+                display:inline-block;
+            }
+            .flipper .fl-num{
+                color:555;
+                background: rgb(181,189,200);
+                background: -moz-linear-gradient(top, rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181,189,200,1)), color-stop(36%,rgba(130,140,149,1)), color-stop(100%,rgba(40,52,59,1)));
+                background: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+                background: -o-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+                background: -ms-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+                background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+            }
+            .flipper .fl-top{
+                border-radius: 4px 4px 0 0;
+            }
+            .flipper .fl-bottom{
+                border-radius: 0 0 4px 4px;
+            }
+            button.s{
+                background: #8F8;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h3>Flipper Demo</h3>
+            <table>
+                <tr>
+                    <td><div id="number">0</div></td>
+                    <td>
+                        <button class="change speed" data-val="slow" data-change="speed">Slow</button>
+                        <button class="change speed s" data-val="normal" data-change="speed">Normal</button>
+                        <button class="change speed" data-val="fast" data-change="speed">Fast</button>
+                        <br />
+                        <button class="change type s" data-val="fall" data-change="type">Fall</button>
+                        <button class="change type" data-val="rise" data-change="type">Rise</button>
+                        <button class="change type" data-val="open" data-change="type">Open</button>
+                        <button class="change type" data-val="close" data-change="type">Close</button>
+                        <br /><br />
+                        <button id="number_go">Change</button>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
