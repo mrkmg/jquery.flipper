@@ -1,8 +1,8 @@
 /* jquery.flipper (c) MrKMG 2012 */
 .flipper {
     text-align: center;
-    position: relative;
-}
+    position: relative
+    }
 
 .flipper .fl-num {
     position: absolute;
@@ -10,558 +10,575 @@
     width: 100%;
     height: 50%;
     overflow: hidden;
-    transform: perspective(500px) rotateX(0deg);
-    -moz-transform: perspective(500px) rotateX(0deg);
-    -webkit-transform: perspective(500px) rotateX(0deg);
-    -o-transform: perspective(500px) rotateX(0deg);
-}
+    -moz-transform: perspective(500px) rotatex(0deg);
+    -ms-transform: perspective(500px) rotatex(0deg);
+    -o-transform: perspective(500px) rotatex(0deg);
+    -webkit-transform: perspective(500px) rotatex(0deg);
+    transform: perspective(500px) rotatex(0deg)
+    }
 
-.flipper .fl-bottom{
-    top: 50%;
-}
-
-
-
+.flipper .fl-bottom {
+    top: 50%
+    }
 
 /* Fall Transition */
-
-.flipper.fl-fall.fl-go .fl-show.fl-top{
-    transform: perspective(500px) rotateX(-90deg);
-    -moz-transform: perspective(500px) rotateX(-90deg);
-    -webkit-transform: perspective(500px) rotateX(-97deg);
-    -o-transform: perspective(500px) rotateX(-90deg);
-}
+.flipper.fl-fall.fl-go .fl-show.fl-top {
+    -moz-transform: perspective(500px) rotatex(-90deg);
+    -ms-transform: perspective(500px) rotatex(-90deg);
+    -o-transform: perspective(500px) rotatex(-90deg);
+    -webkit-transform: perspective(500px) rotatex(-96deg);
+    transform: perspective(500px) rotatex(-90deg)
+    }
 
 .flipper.fl-fall.fl-go .fl-new.fl-bottom {
-    transform: perspective(500px) rotateX(0deg);
-    -moz-transform: perspective(500px) rotateX(0deg);
-    -webkit-transform: perspective(500px) rotateX(0deg);
-    -o-transform: perspective(500px) rotateX(0deg);
-}
+    -moz-transform: perspective(500px) rotatex(0deg);
+    -ms-transform: perspective(500px) rotatex(0deg);
+    -o-transform: perspective(500px) rotatex(0deg);
+    -webkit-transform: perspective(500px) rotatex(0deg);
+    transform: perspective(500px) rotatex(0deg)
+    }
 
 .flipper.fl-fall .fl-new.fl-bottom {
-    transform: perspective(500px) rotateX(90deg);
-    -moz-transform: perspective(500px) rotateX(90deg);
-    -webkit-transform: perspective(500px) rotateX(90deg);
-    -o-transform: perspective(500px) rotateX(90deg);
-    z-index: 2;
-}
+    -moz-transform: perspective(500px) rotatex(90deg);
+    -ms-transform: perspective(500px) rotatex(90deg);
+    -o-transform: perspective(500px) rotatex(90deg);
+    -webkit-transform: perspective(500px) rotatex(90deg);
+    transform: perspective(500px) rotatex(90deg);
+    z-index: 2
+    }
 
 .flipper.fl-fall.fl-animate.fl-fast .fl-top {
-    transition: transform .25s ease-in;
-    -moz-transition: -moz-transform .25s ease-in;
-    -webkit-transition: -webkit-transform .25s ease-in;
-    -o-transition: -o-transform .25s ease-in;
-}
+    -moz-transition: -moz-transform 0.25s ease-in;
+    -o-transition: -o-transform 0.25s ease-in;
+    -webkit-transition: -webkit-transform 0.25s ease-in;
+    transition: transform 0.25s ease-in
+    }
 
 .flipper.fl-fall.fl-animate.fl-fast .fl-bottom {
-    transition: transform .25s ease-out;
-    -moz-transition: -moz-transform .25s ease-out;
-    -webkit-transition: -webkit-transform .25s ease-out;
-    -o-transition: -o-transform .25s ease-out;
-    transition-delay: .25s;
-    -moz-transition-delay: .25s;
-    -webkit-transition-delay: .25s;
-    -o-transition-delay: .25s;
-}
+    -moz-transition: -moz-transform 0.25s ease-out;
+    -o-transition: -o-transform 0.25s ease-out;
+    -webkit-transition: -webkit-transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    -moz-transition-delay: 0.25s;
+    -o-transition-delay: 0.25s;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s
+    }
 
 .flipper.fl-fall.fl-animate.fl-normal .fl-top {
-    transition: transform .50s ease-in;
-    -moz-transition: -moz-transform .50s ease-in;
-    -webkit-transition: -webkit-transform .50s ease-in;
-    -o-transition: -o-transform .50s ease-in;
-}
+    -moz-transition: -moz-transform 0.5s ease-in;
+    -o-transition: -o-transform 0.5s ease-in;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in
+    }
 
 .flipper.fl-fall.fl-animate.fl-normal .fl-bottom {
-    transition: transform .50s ease-out;
-    -moz-transition: -moz-transform .50s ease-out;
-    -webkit-transition: -webkit-transform .50s ease-out;
-    -o-transition: -o-transform .50s ease-out;
-    transition-delay: .50s;
-    -moz-transition-delay: .50s;
-    -webkit-transition-delay: .50s;
-    -o-transition-delay: .50s;
-}
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    -moz-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s
+    }
 
 .flipper.fl-fall.fl-animate.fl-slow .fl-top {
-    transition: transform 1s ease-in;
     -moz-transition: -moz-transform 1s ease-in;
-    -webkit-transition: -webkit-transform 1s ease-in;
     -o-transition: -o-transform 1s ease-in;
-}
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: transform 1s ease-in
+    }
 
 .flipper.fl-fall.fl-animate.fl-slow .fl-bottom {
-    transition: transform 1s ease-out;
     -moz-transition: -moz-transform 1s ease-out;
-    -webkit-transition: -webkit-transform 1s ease-out;
     -o-transition: -o-transform 1s ease-out;
-    transition-delay: 1s;
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: transform 1s ease-out;
     -moz-transition-delay: 1s;
-    -webkit-transition-delay: 1s;
     -o-transition-delay: 1s;
-}
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s
+    }
 
-.flipper.fl-fall .fl-top{
-    transform-origin: bottom center;
+.flipper.fl-fall .fl-top {
     -moz-transform-origin: bottom center;
-    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
     -o-transform-origin: bottom center;
-    z-index: 1;
-}
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
+    z-index: 1
+    }
 
-.flipper.fl-fall .fl-bottom{
-    line-height: 0px;
-    transform-origin: top center;
+.flipper.fl-fall .fl-bottom {
+    line-height: 0;
     -moz-transform-origin: top center;
-    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
     -o-transform-origin: top center;
-    z-index: 1;
-}
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    z-index: 1
+    }
 
 /* Rise Transition */
-
-.flipper.fl-rise.fl-go .fl-show.fl-bottom{
-    transform: perspective(500px) rotateX(-90deg);
-    -moz-transform: perspective(500px) rotateX(-90deg);
-    -webkit-transform: perspective(500px) rotateX(-90deg);
-    -o-transform: perspective(500px) rotateX(-90deg);
-}
+.flipper.fl-rise.fl-go .fl-show.fl-bottom {
+    -moz-transform: perspective(500px) rotatex(-90deg);
+    -ms-transform: perspective(500px) rotatex(-90deg);
+    -o-transform: perspective(500px) rotatex(-90deg);
+    -webkit-transform: perspective(500px) rotatex(-90deg);
+    transform: perspective(500px) rotatex(-90deg)
+    }
 
 .flipper.fl-rise.fl-go .fl-new.fl-top {
-    transform: perspective(500px) rotateX(-0deg);
-    -moz-transform: perspective(500px) rotateX(0deg);
-    -webkit-transform: perspective(500px) rotateX(-0deg);
-    -o-transform: perspective(500px) rotateX(-0deg);
-}
+    -moz-transform: perspective(500px) rotatex(0deg);
+    -ms-transform: perspective(500px) rotatex(0deg);
+    -o-transform: perspective(500px) rotatex(0deg);
+    -webkit-transform: perspective(500px) rotatex(0deg);
+    transform: perspective(500px) rotatex(0deg)
+    }
 
 .flipper.fl-rise .fl-new.fl-top {
-    transform: perspective(500px) rotateX(-90deg);
-    -moz-transform: perspective(500px) rotateX(-90deg);
-    -webkit-transform: perspective(500px) rotateX(83deg);
-    -o-transform: perspective(500px) rotateX(-90deg);
-    z-index: 2;
-}
+    -moz-transform: perspective(500px) rotatex(-90deg);
+    -ms-transform: perspective(500px) rotatex(-90deg);
+    -o-transform: perspective(500px) rotatex(-90deg);
+    -webkit-transform: perspective(500px) rotatex(83deg);
+    transform: perspective(500px) rotatex(-90deg);
+    z-index: 2
+    }
 
 .flipper.fl-rise.fl-animate.fl-fast .fl-bottom {
-    transition: transform .25s ease-in;
-    -moz-transition: -moz-transform .25s ease-in;
-    -webkit-transition: -webkit-transform .25s ease-in;
-    -o-transition: -o-transform .25s ease-in;
-}
+    -moz-transition: -moz-transform 0.25s ease-in;
+    -o-transition: -o-transform 0.25s ease-in;
+    -webkit-transition: -webkit-transform 0.25s ease-in;
+    transition: transform 0.25s ease-in
+    }
 
 .flipper.fl-rise.fl-animate.fl-fast .fl-top {
-    transition: transform .25s ease-out;
-    -moz-transition: -moz-transform .25s ease-out;
-    -webkit-transition: -webkit-transform .25s ease-out;
-    -o-transition: -o-transform .25s ease-out;
-    transition-delay: .25s;
-    -moz-transition-delay: .25s;
-    -webkit-transition-delay: .25s;
-    -o-transition-delay: .25s;
-}
+    -moz-transition: -moz-transform 0.25s ease-out;
+    -o-transition: -o-transform 0.25s ease-out;
+    -webkit-transition: -webkit-transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    -moz-transition-delay: 0.25s;
+    -o-transition-delay: 0.25s;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s
+    }
 
 .flipper.fl-rise.fl-animate.fl-normal .fl-bottom {
-    transition: transform .50s ease-in;
-    -moz-transition: -moz-transform .50s ease-in;
-    -webkit-transition: -webkit-transform .50s ease-in;
-    -o-transition: -o-transform .50s ease-in;
-}
+    -moz-transition: -moz-transform 0.5s ease-in;
+    -o-transition: -o-transform 0.5s ease-in;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in
+    }
 
 .flipper.fl-rise.fl-animate.fl-normal .fl-top {
-    transition: transform .50s ease-out;
-    -moz-transition: -moz-transform .50s ease-out;
-    -webkit-transition: -webkit-transform .50s ease-out;
-    -o-transition: -o-transform .50s ease-out;
-    transition-delay: .50s;
-    -moz-transition-delay: .50s;
-    -webkit-transition-delay: .50s;
-    -o-transition-delay: .50s;
-}
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    -moz-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s
+    }
 
 .flipper.fl-rise.fl-animate.fl-slow .fl-bottom {
-    transition: transform 1s ease-in;
     -moz-transition: -moz-transform 1s ease-in;
-    -webkit-transition: -webkit-transform 1s ease-in;
     -o-transition: -o-transform 1s ease-in;
-}
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: transform 1s ease-in
+    }
 
 .flipper.fl-rise.fl-animate.fl-slow .fl-top {
-    transition: transform 1s ease-out;
     -moz-transition: -moz-transform 1s ease-out;
-    -webkit-transition: -webkit-transform 1s ease-out;
     -o-transition: -o-transform 1s ease-out;
-    transition-delay: 1s;
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: transform 1s ease-out;
     -moz-transition-delay: 1s;
-    -webkit-transition-delay: 1s;
     -o-transition-delay: 1s;
-}
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s
+    }
 
-.flipper.fl-rise .fl-bottom{
-    transform-origin: top center;
+.flipper.fl-rise .fl-bottom {
     -moz-transform-origin: top center;
-    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
     -o-transform-origin: top center;
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
     z-index: 1;
-    line-height: 0px;
-}
+    line-height: 0
+    }
 
-.flipper.fl-rise .fl-top{
-    transform-origin: bottom center;
+.flipper.fl-rise .fl-top {
     -moz-transform-origin: bottom center;
-    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
     -o-transform-origin: bottom center;
-    z-index: 1;
-}
-
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
+    z-index: 1
+    }
 
 /* Open transition */
-
-.flipper.fl-open.fl-go .fl-show.fl-top{
-    transform: perspective(500px) rotateX(360deg);
-    -moz-transform: perspective(500px) rotateX(360deg);
-    -webkit-transform: perspective(500px) rotateX(-360deg);
-    -o-transform: perspective(500px) rotateX(360deg);
-}
+.flipper.fl-open.fl-go .fl-show.fl-top {
+    -moz-transform: perspective(500px) rotatex(360deg);
+    -ms-transform: perspective(500px) rotatex(360deg);
+    -o-transform: perspective(500px) rotatex(360deg);
+    -webkit-transform: perspective(500px) rotatex(360deg);
+    transform: perspective(500px) rotatex(360deg)
+    }
 
 .flipper.fl-open.fl-go .fl-show.fl-bottom {
-    transform: perspective(500px) rotateX(0deg);
-    -moz-transform: perspective(500px) rotateX(0deg);
-    -webkit-transform: perspective(500px) rotateX(0deg);
-    -o-transform: perspective(500px) rotateX(0deg);
-}
+    -moz-transform: perspective(500px) rotatex(0deg);
+    -ms-transform: perspective(500px) rotatex(0deg);
+    -o-transform: perspective(500px) rotatex(0deg);
+    -webkit-transform: perspective(500px) rotatex(0deg);
+    transform: perspective(500px) rotatex(0deg)
+    }
 
 .flipper.fl-open .fl-show.fl-bottom {
-    transform: perspective(500px) rotateX(360deg);
-    -moz-transform: perspective(500px) rotateX(360deg);
-    -webkit-transform: perspective(500px) rotateX(360deg);
-    -o-transform: perspective(500px) rotateX(360deg);
-}
+    -moz-transform: perspective(500px) rotatex(360deg);
+    -ms-transform: perspective(500px) rotatex(360deg);
+    -o-transform: perspective(500px) rotatex(360deg);
+    -webkit-transform: perspective(500px) rotatex(360deg);
+    transform: perspective(500px) rotatex(360deg)
+    }
 
 .flipper.fl-open.fl-animate.fl-fast .fl-top {
-    transition: transform .5s linear;
-    -moz-transition: -moz-transform .5s linear;
-    -webkit-transition: -webkit-transform .5s linear;
-    -o-transition: -o-transform .5s linear;
-}
+    -moz-transition: -moz-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    transition: transform 0.5s linear
+    }
 
 .flipper.fl-open.fl-animate.fl-fast .fl-bottom {
-    transition: transform .5s linear;
-    -moz-transition: -moz-transform .5s linear;
-    -webkit-transition: -webkit-transform .5s linear;
-    -o-transition: -o-transform .5s linear;
-}
+    -moz-transition: -moz-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    transition: transform 0.5s linear
+    }
 
 .flipper.fl-open.fl-animate.fl-normal .fl-top {
-    transition: transform 1s linear;
     -moz-transition: -moz-transform 1s linear;
-    -webkit-transition: -webkit-transform 1s linear;
     -o-transition: -o-transform 1s linear;
-}
+    -webkit-transition: -webkit-transform 1s linear;
+    transition: transform 1s linear
+    }
 
 .flipper.fl-open.fl-animate.fl-normal .fl-bottom {
-    transition: transform 1s linear;
     -moz-transition: -moz-transform 1s linear;
-    -webkit-transition: -webkit-transform 1s linear;
     -o-transition: -o-transform 1s linear;
-}
+    -webkit-transition: -webkit-transform 1s linear;
+    transition: transform 1s linear
+    }
 
 .flipper.fl-open.fl-animate.fl-slow .fl-top {
-    transition: transform 2s linear;
     -moz-transition: -moz-transform 2s linear;
-    -webkit-transition: -webkit-transform 2s linear;
     -o-transition: -o-transform 2s linear;
-}
+    -webkit-transition: -webkit-transform 2s linear;
+    transition: transform 2s linear
+    }
 
 .flipper.fl-open.fl-animate.fl-slow .fl-bottom {
-    transition: transform 2s linear;
     -moz-transition: -moz-transform 2s linear;
-    -webkit-transition: -webkit-transform 2s linear;
     -o-transition: -o-transform 2s linear;
-}
+    -webkit-transition: -webkit-transform 2s linear;
+    transition: transform 2s linear
+    }
 
-.flipper.fl-open .fl-show{
-    z-index: 2;
-}
+.flipper.fl-open .fl-show {
+    z-index: 2
+    }
 
-.flipper.fl-open.fl-zfix .fl-show{
-    z-index: 1;
-}
+.flipper.fl-open.fl-zfix .fl-show {
+    z-index: 1
+    }
 
-.flipper.fl-open .fl-new{
-    z-index: 1;
-}
+.flipper.fl-open .fl-new {
+    z-index: 1
+    }
 
-.flipper.fl-open.fl-zfix .fl-new{
-    z-index: 2;
-}
+.flipper.fl-open.fl-zfix .fl-new {
+    z-index: 2
+    }
 
-
-.flipper.fl-open .fl-top{
-    transform-origin: top center;
+.flipper.fl-open .fl-top {
     -moz-transform-origin: top center;
-    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
     -o-transform-origin: top center;
-}
+    -webkit-transform-origin: top center;
+    transform-origin: top center
+    }
 
-.flipper.fl-open .fl-bottom{
-    line-height: 0px;
-    transform-origin: bottom center;
+.flipper.fl-open .fl-bottom {
+    line-height: 0;
     -moz-transform-origin: bottom center;
-    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
     -o-transform-origin: bottom center;
-}
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center
+    }
 
 /* Close transition */
-
-.flipper.fl-close.fl-go .fl-show.fl-top{
-    transform: perspective(500px) rotateX(-360deg);
-    -moz-transform: perspective(500px) rotateX(-360deg);
-    -webkit-transform: perspective(500px) rotateX(-360deg);
-    -o-transform: perspective(500px) rotateX(-360deg);
-}
+.flipper.fl-close.fl-go .fl-show.fl-top {
+    -moz-transform: perspective(500px) rotatex(-360deg);
+    -ms-transform: perspective(500px) rotatex(-360deg);
+    -o-transform: perspective(500px) rotatex(-360deg);
+    -webkit-transform: perspective(500px) rotatex(-360deg);
+    transform: perspective(500px) rotatex(-360deg)
+    }
 
 .flipper.fl-close.fl-go .fl-show.fl-bottom {
-    transform: perspective(500px) rotateX(0deg);
-    -moz-transform: perspective(500px) rotateX(0deg);
-    -webkit-transform: perspective(500px) rotateX(0deg);
-    -o-transform: perspective(500px) rotateX(0deg);
-}
+    -moz-transform: perspective(500px) rotatex(0deg);
+    -ms-transform: perspective(500px) rotatex(0deg);
+    -o-transform: perspective(500px) rotatex(0deg);
+    -webkit-transform: perspective(500px) rotatex(0deg);
+    transform: perspective(500px) rotatex(0deg)
+    }
 
 .flipper.fl-close .fl-show.fl-bottom {
-    transform: perspective(500px) rotateX(-360deg);
-    -moz-transform: perspective(500px) rotateX(-360deg);
-    -webkit-transform: perspective(500px) rotateX(360deg);
-    -o-transform: perspective(500px) rotateX(-360deg);
-}
+    -moz-transform: perspective(500px) rotatex(-360deg);
+    -ms-transform: perspective(500px) rotatex(-360deg);
+    -o-transform: perspective(500px) rotatex(-360deg);
+    -webkit-transform: perspective(500px) rotatex(-360deg);
+    transform: perspective(500px) rotatex(-360deg)
+    }
 
 .flipper.fl-close.fl-animate.fl-fast .fl-top {
-    transition: transform .5s linear;
-    -moz-transition: -moz-transform .5s linear;
-    -webkit-transition: -webkit-transform .5s linear;
-    -o-transition: -o-transform .5s linear;
-}
+    -moz-transition: -moz-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    transition: transform 0.5s linear
+    }
 
 .flipper.fl-close.fl-animate.fl-fast .fl-bottom {
-    transition: transform .5s linear;
-    -moz-transition: -moz-transform .5s linear;
-    -webkit-transition: -webkit-transform .5s linear;
-    -o-transition: -o-transform .5s linear;
-}
+    -moz-transition: -moz-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    transition: transform 0.5s linear
+    }
 
 .flipper.fl-close.fl-animate.fl-normal .fl-top {
-    transition: transform 1s linear;
     -moz-transition: -moz-transform 1s linear;
-    -webkit-transition: -webkit-transform 1s linear;
     -o-transition: -o-transform 1s linear;
-}
+    -webkit-transition: -webkit-transform 1s linear;
+    transition: transform 1s linear
+    }
 
 .flipper.fl-close.fl-animate.fl-normal .fl-bottom {
-    transition: transform 1s linear;
     -moz-transition: -moz-transform 1s linear;
-    -webkit-transition: -webkit-transform 1s linear;
     -o-transition: -o-transform 1s linear;
-}
+    -webkit-transition: -webkit-transform 1s linear;
+    transition: transform 1s linear
+    }
 
 .flipper.fl-close.fl-animate.fl-slow .fl-top {
-    transition: transform 2s linear;
     -moz-transition: -moz-transform 2s linear;
-    -webkit-transition: -webkit-transform 2s linear;
     -o-transition: -o-transform 2s linear;
-}
+    -webkit-transition: -webkit-transform 2s linear;
+    transition: transform 2s linear
+    }
 
 .flipper.fl-close.fl-animate.fl-slow .fl-bottom {
-    transition: transform 2s linear;
     -moz-transition: -moz-transform 2s linear;
-    -webkit-transition: -webkit-transform 2s linear;
     -o-transition: -o-transform 2s linear;
-}
+    -webkit-transition: -webkit-transform 2s linear;
+    transition: transform 2s linear
+    }
 
-.flipper.fl-close .fl-show{
-    z-index: 2;
-}
+.flipper.fl-close .fl-show {
+    z-index: 2
+    }
 
-.flipper.fl-close.fl-zfix .fl-show{
-    z-index: 1;
-}
+.flipper.fl-close.fl-zfix .fl-show {
+    z-index: 1
+    }
 
-.flipper.fl-close .fl-new{
-    z-index: 1;
-}
+.flipper.fl-close .fl-new {
+    z-index: 1
+    }
 
-.flipper.fl-close.fl-zfix .fl-new{
-    z-index: 2;
-}
+.flipper.fl-close.fl-zfix .fl-new {
+    z-index: 2
+    }
 
-
-.flipper.fl-close .fl-top{
-    transform-origin: top center;
+.flipper.fl-close .fl-top {
     -moz-transform-origin: top center;
-    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
     -o-transform-origin: top center;
-}
+    -webkit-transform-origin: top center;
+    transform-origin: top center
+    }
 
-.flipper.fl-close .fl-bottom{
-    line-height: 0px;
-    transform-origin: bottom center;
+.flipper.fl-close .fl-bottom {
+    line-height: 0;
     -moz-transform-origin: bottom center;
-    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
     -o-transform-origin: bottom center;
-}
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center
+    }
 
 /* Clap Transition */
-
-.flipper.fl-clap.fl-go .fl-show.fl-top{
-    transform: perspective(500px) rotateX(-90deg);
-    -moz-transform: perspective(500px) rotateX(-90deg);
-    -webkit-transform: perspective(500px) rotateX(-90deg);
-    -o-transform: perspective(500px) rotateX(-90deg);
-}
+.flipper.fl-clap.fl-go .fl-show.fl-top {
+    -moz-transform: perspective(500px) rotatex(-90deg);
+    -ms-transform: perspective(500px) rotatex(-90deg);
+    -o-transform: perspective(500px) rotatex(-90deg);
+    -webkit-transform: perspective(500px) rotatex(-90deg);
+    transform: perspective(500px) rotatex(-90deg)
+    }
 
 .flipper.fl-clap.fl-go .fl-new.fl-bottom {
-    transform: perspective(500px) rotateX(90deg);
-    -moz-transform: perspective(500px) rotateX(90deg);
-    -webkit-transform: perspective(500px) rotateX(90deg);
-    -o-transform: perspective(500px) rotateX(90deg);
-    z-index: 2;
-}
+    -moz-transform: perspective(500px) rotatex(90deg);
+    -ms-transform: perspective(500px) rotatex(90deg);
+    -o-transform: perspective(500px) rotatex(90deg);
+    -webkit-transform: perspective(500px) rotatex(90deg);
+    transform: perspective(500px) rotatex(90deg);
+    z-index: 2
+    }
 
 .flipper.fl-clap .fl-new.fl-bottom {
-    transform: perspective(500px) rotateX(0deg);
-    -moz-transform: perspective(500px) rotateX(0deg);
-    -webkit-transform: perspective(500px) rotateX(0deg);
-    -o-transform: perspective(500px) rotateX(0deg);
-    z-index: 1;
-}
+    -moz-transform: perspective(500px) rotatex(0deg);
+    -ms-transform: perspective(500px) rotatex(0deg);
+    -o-transform: perspective(500px) rotatex(0deg);
+    -webkit-transform: perspective(500px) rotatex(0deg);
+    transform: perspective(500px) rotatex(0deg);
+    z-index: 1
+    }
 
 .flipper.fl-clap.fl-animate.fl-fast .fl-top {
-    transition: transform .5s ease-in;
-    -moz-transition: -moz-transform .5s ease-in;
-    -webkit-transition: -webkit-transform .5s ease-in;
-    -o-transition: -o-transform .5s ease-in;
-}
+    -moz-transition: -moz-transform 0.5s ease-in;
+    -o-transition: -o-transform 0.5s ease-in;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in
+    }
 
 .flipper.fl-clap.fl-animate.fl-fast .fl-bottom {
-    transition: transform .5s ease-in;
-    -moz-transition: -moz-transform .5s ease-in;
-    -webkit-transition: -webkit-transform .5s ease-in;
-    -o-transition: -o-transform .5s ease-in;
-}
+    -moz-transition: -moz-transform 0.5s ease-in;
+    -o-transition: -o-transform 0.5s ease-in;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in
+    }
 
 .flipper.fl-clap.fl-animate.fl-normal .fl-top {
-    transition: transform 1s ease-in;
     -moz-transition: -moz-transform 1s ease-in;
-    -webkit-transition: -webkit-transform 1s ease-in;
     -o-transition: -o-transform 1s ease-in;
-}
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: transform 1s ease-in
+    }
 
 .flipper.fl-clap.fl-animate.fl-normal .fl-bottom {
-    transition: transform 1s ease-in;
     -moz-transition: -moz-transform 1s ease-in;
-    -webkit-transition: -webkit-transform 1s ease-in;
     -o-transition: -o-transform 1s ease-in;
-}
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: transform 1s ease-in
+    }
 
 .flipper.fl-clap.fl-animate.fl-slow .fl-top {
-    transition: transform 2s ease-in;
     -moz-transition: -moz-transform 2s ease-in;
-    -webkit-transition: -webkit-transform 2s ease-in;
     -o-transition: -o-transform 2s ease-in;
-}
+    -webkit-transition: -webkit-transform 2s ease-in;
+    transition: transform 2s ease-in
+    }
 
 .flipper.fl-clap.fl-animate.fl-slow .fl-bottom {
-    transition: transform 2s ease-in;
     -moz-transition: -moz-transform 2s ease-in;
-    -webkit-transition: -webkit-transform 2s ease-in;
     -o-transition: -o-transform 2s ease-in;
-}
+    -webkit-transition: -webkit-transform 2s ease-in;
+    transition: transform 2s ease-in
+    }
 
-.flipper.fl-clap .fl-top{
-    transform-origin: bottom center;
+.flipper.fl-clap .fl-top {
     -moz-transform-origin: bottom center;
-    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
     -o-transform-origin: bottom center;
-    z-index: 1;
-}
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
+    z-index: 1
+    }
 
-.flipper.fl-clap .fl-bottom{
-    line-height: 0px;
-    transform-origin: top center;
+.flipper.fl-clap .fl-bottom {
+    line-height: 0;
     -moz-transform-origin: top center;
-    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
     -o-transform-origin: top center;
-    z-index: 1;
-}
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    z-index: 1
+    }
 
 /* slide Transition */
+.flipper.fl-slide.fl-go .fl-show.fl-top {
+    -moz-transform: perspective(500px) translatey(100%);
+    -ms-transform: perspective(500px) translatey(100%);
+    -o-transform: perspective(500px) translatey(100%);
+    -webkit-transform: perspective(500px) translatey(100%);
+    transform: perspective(500px) translatey(100%)
+    }
 
-.flipper.fl-slide.fl-go .fl-show.fl-top{
-    transform: perspective(500px) translateY(100%);
-    -moz-transform: perspective(500px) translateY(100%);
-    -webkit-transform: perspective(500px) translateY(100%);
-    -o-transform: perspective(500px) translateY(100%);
-}
-
-.flipper.fl-slide.fl-zfix .fl-new.fl-top{
-    z-index: 3;
-}
+.flipper.fl-slide.fl-zfix .fl-new.fl-top {
+    z-index: 3
+    }
 
 .flipper.fl-slide.fl-animate.fl-fast .fl-top {
-    transition: transform .25s ease-in;
-    -moz-transition: -moz-transform .25s ease-in;
-    -webkit-transition: -webkit-transform .25s ease-in;
-    -o-transition: -o-transform .25s ease-in;
-}
+    -moz-transition: -moz-transform 0.25s ease-in;
+    -o-transition: -o-transform 0.25s ease-in;
+    -webkit-transition: -webkit-transform 0.25s ease-in;
+    transition: transform 0.25s ease-in
+    }
 
 .flipper.fl-slide.fl-animate.fl-fast .fl-bottom {
-    transition: transform .25s ease-in;
-    -moz-transition: -moz-transform .25s ease-in;
-    -webkit-transition: -webkit-transform .25s ease-in;
-    -o-transition: -o-transform .25s ease-in;
-}
+    -moz-transition: -moz-transform 0.25s ease-in;
+    -o-transition: -o-transform 0.25s ease-in;
+    -webkit-transition: -webkit-transform 0.25s ease-in;
+    transition: transform 0.25s ease-in
+    }
 
 .flipper.fl-slide.fl-animate.fl-normal .fl-top {
-    transition: transform .5s ease-in;
-    -moz-transition: -moz-transform .5s ease-in;
-    -webkit-transition: -webkit-transform .5s ease-in;
-    -o-transition: -o-transform .5s ease-in;
-}
+    -moz-transition: -moz-transform 0.5s ease-in;
+    -o-transition: -o-transform 0.5s ease-in;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in
+    }
 
 .flipper.fl-slide.fl-animate.fl-normal .fl-bottom {
-    transition: transform .5s ease-in;
-    -moz-transition: -moz-transform .5s ease-in;
-    -webkit-transition: -webkit-transform .5s ease-in;
-    -o-transition: -o-transform .5s ease-in;
-}
+    -moz-transition: -moz-transform 0.5s ease-in;
+    -o-transition: -o-transform 0.5s ease-in;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in
+    }
 
 .flipper.fl-slide.fl-animate.fl-slow .fl-top {
-    transition: transform 1s ease-in;
     -moz-transition: -moz-transform 1s ease-in;
-    -webkit-transition: -webkit-transform 1s ease-in;
     -o-transition: -o-transform 1s ease-in;
-}
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: transform 1s ease-in
+    }
 
 .flipper.fl-slide.fl-animate.fl-slow .fl-bottom {
-    transition: transform 1s ease-in;
     -moz-transition: -moz-transform 1s ease-in;
-    -webkit-transition: -webkit-transform 1s ease-in;
     -o-transition: -o-transform 1s ease-in;
-}
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: transform 1s ease-in
+    }
 
-.flipper.fl-slide .fl-show.fl-top{
+.flipper.fl-slide .fl-show.fl-top {
     z-index: 2
-}
+    }
 
-.flipper.fl-slide .fl-top{
-    transform-origin: bottom center;
+.flipper.fl-slide .fl-top {
     -moz-transform-origin: bottom center;
-    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
     -o-transform-origin: bottom center;
-}
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center
+    }
 
-.flipper.fl-slide .fl-bottom{
-    line-height: 0px;
-    transform-origin: top center;
+.flipper.fl-slide .fl-bottom {
+    line-height: 0;
     -moz-transform-origin: top center;
-    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
     -o-transform-origin: top center;
-}
+    -webkit-transform-origin: top center;
+    transform-origin: top center
+    }

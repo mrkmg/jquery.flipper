@@ -1,0 +1,354 @@
+/* jquery.flipper (c) MrKMG 2012 */
+.flipper {
+    text-align: center;
+    position: relative;
+}
+
+.flipper .fl-num {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    transform: perspective(500px) rotateX(0deg);
+}
+
+.flipper .fl-bottom{
+    top: 50%;
+}
+
+
+
+
+/* Fall Transition */
+
+.flipper.fl-fall.fl-go .fl-show.fl-top{
+    transform: perspective(500px) rotateX(-90deg);
+}
+
+.flipper.fl-fall.fl-go .fl-new.fl-bottom {
+    transform: perspective(500px) rotateX(0deg);Q
+}
+
+.flipper.fl-fall .fl-new.fl-bottom {
+    transform: perspective(500px) rotateX(90deg);
+    z-index: 2;
+}
+
+.flipper.fl-fall.fl-animate.fl-fast .fl-top {
+    transition: transform .25s ease-in;
+}
+
+.flipper.fl-fall.fl-animate.fl-fast .fl-bottom {
+    transition: transform .25s ease-out;
+    transition-delay: .25s;
+}
+
+.flipper.fl-fall.fl-animate.fl-normal .fl-top {
+    transition: transform .50s ease-in;
+}
+
+.flipper.fl-fall.fl-animate.fl-normal .fl-bottom {
+    transition: transform .50s ease-out;
+    transition-delay: .50s;
+}
+
+.flipper.fl-fall.fl-animate.fl-slow .fl-top {
+    transition: transform 1s ease-in;
+}
+
+.flipper.fl-fall.fl-animate.fl-slow .fl-bottom {
+    transition: transform 1s ease-out;
+    transition-delay: 1s;
+}
+
+.flipper.fl-fall .fl-top{
+    transform-origin: bottom center;
+    z-index: 1;
+}
+
+.flipper.fl-fall .fl-bottom{
+    line-height: 0px;
+    transform-origin: top center;
+    z-index: 1;
+}
+
+/* Rise Transition */
+
+.flipper.fl-rise.fl-go .fl-show.fl-bottom{
+    transform: perspective(500px) rotateX(-90deg);
+}
+
+.flipper.fl-rise.fl-go .fl-new.fl-top {
+    transform: perspective(500px) rotateX(-0deg);
+}
+
+.flipper.fl-rise .fl-new.fl-top {
+    transform: perspective(500px) rotateX(-90deg);
+    z-index: 2;
+}
+
+.flipper.fl-rise.fl-animate.fl-fast .fl-bottom {
+    transition: transform .25s ease-in;
+}
+
+.flipper.fl-rise.fl-animate.fl-fast .fl-top {
+    transition: transform .25s ease-out;
+    transition-delay: .25s;
+}
+
+.flipper.fl-rise.fl-animate.fl-normal .fl-bottom {
+    transition: transform .50s ease-in;
+}
+
+.flipper.fl-rise.fl-animate.fl-normal .fl-top {
+    transition: transform .50s ease-out;
+    transition-delay: .50s;
+}
+
+.flipper.fl-rise.fl-animate.fl-slow .fl-bottom {
+    transition: transform 1s ease-in;
+}
+
+.flipper.fl-rise.fl-animate.fl-slow .fl-top {
+    transition: transform 1s ease-out;
+    transition-delay: 1s;
+}
+
+.flipper.fl-rise .fl-bottom{
+    transform-origin: top center;
+    z-index: 1;
+    line-height: 0px;
+}
+
+.flipper.fl-rise .fl-top{
+    transform-origin: bottom center;
+    z-index: 1;
+}
+
+
+/* Open transition */
+
+.flipper.fl-open.fl-go .fl-show.fl-top{
+    transform: perspective(500px) rotateX(360deg);
+}
+
+.flipper.fl-open.fl-go .fl-show.fl-bottom {
+    transform: perspective(500px) rotateX(0deg);
+}
+
+.flipper.fl-open .fl-show.fl-bottom {
+    transform: perspective(500px) rotateX(360deg);
+}
+
+.flipper.fl-open.fl-animate.fl-fast .fl-top {
+    transition: transform .5s linear;
+}
+
+.flipper.fl-open.fl-animate.fl-fast .fl-bottom {
+    transition: transform .5s linear;
+}
+
+.flipper.fl-open.fl-animate.fl-normal .fl-top {
+    transition: transform 1s linear;
+}
+
+.flipper.fl-open.fl-animate.fl-normal .fl-bottom {
+    transition: transform 1s linear;
+}
+
+.flipper.fl-open.fl-animate.fl-slow .fl-top {
+    transition: transform 2s linear;
+}
+
+.flipper.fl-open.fl-animate.fl-slow .fl-bottom {
+    transition: transform 2s linear;
+}
+
+.flipper.fl-open .fl-show{
+    z-index: 2;
+}
+
+.flipper.fl-open.fl-zfix .fl-show{
+    z-index: 1;
+}
+
+.flipper.fl-open .fl-new{
+    z-index: 1;
+}
+
+.flipper.fl-open.fl-zfix .fl-new{
+    z-index: 2;
+}
+
+
+.flipper.fl-open .fl-top{
+    transform-origin: top center;
+}
+
+.flipper.fl-open .fl-bottom{
+    line-height: 0px;
+    transform-origin: bottom center;
+}
+
+/* Close transition */
+
+.flipper.fl-close.fl-go .fl-show.fl-top{
+    transform: perspective(500px) rotateX(-360deg);
+}
+
+.flipper.fl-close.fl-go .fl-show.fl-bottom {
+    transform: perspective(500px) rotateX(0deg);
+}
+
+.flipper.fl-close .fl-show.fl-bottom {
+    transform: perspective(500px) rotateX(-360deg);
+}
+
+.flipper.fl-close.fl-animate.fl-fast .fl-top {
+    transition: transform .5s linear;
+}
+
+.flipper.fl-close.fl-animate.fl-fast .fl-bottom {
+    transition: transform .5s linear;
+}
+
+.flipper.fl-close.fl-animate.fl-normal .fl-top {
+    transition: transform 1s linear;
+}
+
+.flipper.fl-close.fl-animate.fl-normal .fl-bottom {
+    transition: transform 1s linear;
+}
+
+.flipper.fl-close.fl-animate.fl-slow .fl-top {
+    transition: transform 2s linear;
+}
+
+.flipper.fl-close.fl-animate.fl-slow .fl-bottom {
+    transition: transform 2s linear;
+}
+
+.flipper.fl-close .fl-show{
+    z-index: 2;
+}
+
+.flipper.fl-close.fl-zfix .fl-show{
+    z-index: 1;
+}
+
+.flipper.fl-close .fl-new{
+    z-index: 1;
+}
+
+.flipper.fl-close.fl-zfix .fl-new{
+    z-index: 2;
+}
+
+
+.flipper.fl-close .fl-top{
+    transform-origin: top center;
+}
+
+.flipper.fl-close .fl-bottom{
+    line-height: 0px;
+    transform-origin: bottom center;
+}
+
+/* Clap Transition */
+
+.flipper.fl-clap.fl-go .fl-show.fl-top{
+    transform: perspective(500px) rotateX(-90deg);
+}
+
+.flipper.fl-clap.fl-go .fl-new.fl-bottom {
+    transform: perspective(500px) rotateX(90deg);
+    z-index: 2;
+}
+
+.flipper.fl-clap .fl-new.fl-bottom {
+    transform: perspective(500px) rotateX(0deg);
+    z-index: 1;
+}
+
+.flipper.fl-clap.fl-animate.fl-fast .fl-top {
+    transition: transform .5s ease-in;
+}
+
+.flipper.fl-clap.fl-animate.fl-fast .fl-bottom {
+    transition: transform .5s ease-in;
+}
+
+.flipper.fl-clap.fl-animate.fl-normal .fl-top {
+    transition: transform 1s ease-in;
+}
+
+.flipper.fl-clap.fl-animate.fl-normal .fl-bottom {
+    transition: transform 1s ease-in;
+}
+
+.flipper.fl-clap.fl-animate.fl-slow .fl-top {
+    transition: transform 2s ease-in;
+}
+
+.flipper.fl-clap.fl-animate.fl-slow .fl-bottom {
+    transition: transform 2s ease-in;
+}
+
+.flipper.fl-clap .fl-top{
+    transform-origin: bottom center;
+    z-index: 1;
+}
+
+.flipper.fl-clap .fl-bottom{
+    line-height: 0px;
+    transform-origin: top center;
+    z-index: 1;
+}
+
+/* slide Transition */
+
+.flipper.fl-slide.fl-go .fl-show.fl-top{
+    transform: perspective(500px) translateY(100%);
+}
+
+.flipper.fl-slide.fl-zfix .fl-new.fl-top{
+    z-index: 3;
+}
+
+.flipper.fl-slide.fl-animate.fl-fast .fl-top {
+    transition: transform .25s ease-in;
+}
+
+.flipper.fl-slide.fl-animate.fl-fast .fl-bottom {
+    transition: transform .25s ease-in;
+}
+
+.flipper.fl-slide.fl-animate.fl-normal .fl-top {
+    transition: transform .5s ease-in;
+}
+
+.flipper.fl-slide.fl-animate.fl-normal .fl-bottom {
+    transition: transform .5s ease-in;
+}
+
+.flipper.fl-slide.fl-animate.fl-slow .fl-top {
+    transition: transform 1s ease-in;
+}
+
+.flipper.fl-slide.fl-animate.fl-slow .fl-bottom {
+    transition: transform 1s ease-in;
+}
+
+.flipper.fl-slide .fl-show.fl-top{
+    z-index: 2
+}
+
+.flipper.fl-slide .fl-top{
+    transform-origin: bottom center;
+}
+
+.flipper.fl-slide .fl-bottom{
+    line-height: 0px;
+    transform-origin: top center;
+}
