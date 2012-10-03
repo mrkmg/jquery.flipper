@@ -2,13 +2,15 @@ Flipper
 =======
 
 Flipper is a jQuery plugin that animates changes in numbers. It uses CSS3 transitions to
-accomplish the animations. Currently it is only works on webkit browsers(Chrome/Safari).
-It has 4 different modes:
+accomplish the animations. Tested on webkit(Chrome/Safari) and mozilla(Firefox/Iceweasel).
+It has 6 different modes:
 
 - Fall: Retro flip down clock like animation. Top half falls onto bottom
 - Rise: Reverse of Fall. Bottom half rises up to top
-- Open: Both halves flip around from the front to the back;
-- Close: Both halves flip around from the back to the front;
+- Open: Both halves flip around from the front to the back
+- Close: Both halves flip around from the back to the front
+- Clap: Both halves flip toward the middle
+- Slide: Top half slides over bottom half, them back up behind th top half
 
 Demo
 ----
@@ -62,7 +64,9 @@ There are 4 important classes that you can/should style
 TODO
 ----
 
-- Implement css transitions for mozilla, opera, IE, and Standard CSS3 (Non vendor specific)
+- Add more types
+- More testing on Mozilla
+- Test on Opera
 
 
 License
