@@ -126,6 +126,48 @@
                     finished();
                 },t);
             break;
+            case 'slide':
+                $this.data().flipper.new1.text(newtext);
+                if(o.speed=='slow'){
+                    var t1 = 2000;
+                    var t2 = 1000;
+                }
+                else if(o.speed=='normal'){
+                    var t1 = 1000;
+                    var t2 = 500;
+                }
+                else if(o.speed=='fast'){
+                    var t1 = 500;
+                    var t2 = 250;
+                }
+                setTimeout(function(){
+                    $this.removeClass('fl-go').addClass('fl-zfix');
+                    $this.data().flipper.cur2.text(newtext);
+                },t2);
+                setTimeout(function(){
+                    $this.removeClass('fl-animate');
+                    $this.data().flipper.cur1.text(newtext);
+                    $this.data().flipper.new1.text('');
+                    $this.removeClass('fl-zfix');
+                    finished();
+                },t1);
+            break;
+            case 'clap':
+                $this.data().flipper.new1.text(newtext);
+                $this.data().flipper.new2.text($this.data().flipper.cur2.text());
+                $this.data().flipper.cur2.text(newtext);
+                if(o.speed=='slow') var t = 2000;
+                else if(o.speed=='normal') var t = 1000;
+                else if(o.speed=='fast') var t = 500;
+                setTimeout(function(){
+                    $this.removeClass('fl-animate');
+                    $this.data().flipper.cur1.text(newtext);
+                    $this.data().flipper.new1.text('');
+                    $this.data().flipper.new2.text('');
+                    $this.removeClass('fl-go');
+                    finished();
+                },t);
+            break;
             case 'open':
                 $this.data().flipper.new1.text(newtext);
                 $this.data().flipper.new2.text(newtext);
