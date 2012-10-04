@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flipper Word Play</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script src="jquery.flipper.js"></script>
+        <link rel="stylesheet" type="text/css" href="jquery.flipper.css">
+        <script>
+
+        var oldval = '';
+        function pulsar(obj) {
+            var newval = obj.value.toUpperCase()
+            if(oldval != newval){
+                oldval=newval;
+                obj.value=newval;
+                doChange();
+            }
+        }
+        var letterList = 
+            [
+                ' ','A','B','C','D','E','F','G','H','I',
+                'J','K','L','M','N','O','P','Q','R','S','T','U',
+                'V','W','X','W','Y','Z','0','1','2','3','4','5',
+                '6','7','8','9','.',',','/','\\','<','>','?','!',
+                '@','#','$','%','^','&','*','(',')'
+            ];
+
+        var listlength = letterList.length;
+        var oldtext = '';
+        function doChange(){
+            var newtext = $('#word').val();
+            var newlength = newtext.length;
+            var oldlength = oldtext.length;
+            for(var i=1;i<6;i++){
+
+                if(i<=newlength) var newletter = newtext.charAt(i-1);
+                else newletter = ' ';
+                if(i<=oldlength) var oldletter = oldtext.charAt(i-1);
+                else oldletter = ' ';
+
+                if(newletter != oldletter){
+                    $('#letter'+i).flipper('clearqueue');
+                    var oldIndex = letterList.indexOf(oldletter);
+                    var newIndex = letterList.indexOf(newletter);
+                    if(newIndex == -1) newIndex = letterList.indexOf('?');
+                    if(newIndex > oldIndex){
+                        var forward = newIndex - oldIndex;
+                        var backward = oldIndex + (listlength - newIndex);
+                    } else {
+                        var forward = (listlength - oldIndex) + newIndex;
+                        var backward  = oldIndex - newIndex;
+                    }
+                    var direction = forward <= backward;
+                    if(direction){
+                        $('#letter'+i).flipper('option','type','fall');
+                    }else{
+                        $('#letter'+i).flipper('option','type','rise');
+                    }var c = 0;
+                    while(oldIndex != newIndex){
+                        if(direction){
+                            oldIndex = (oldIndex+1)%listlength;
+                        }
+                        else{
+                            oldIndex--;
+                            if(oldIndex==-1) oldIndex = listlength-1;
+                        }
+                        console.log(oldIndex,newIndex);
+                        $('#letter'+i).flipper('update',letterList[oldIndex]);
+                        c++;
+                        if(c>100) return;
+                    }
+                }
+            }
+            oldtext = newtext;
+        }
+        $(document).ready(function(){
+            $('#change').click(doChange);
+            $('.letter').flipper({speed:'fast'});
+        });
+        </script>
+        <style>
+            .flipper{
+                height:60px;
+                width:40px;
+                font-size: 50px;
+                display:inline-block;
+            }
+            .flipper .fl-num{
+                color:555;
+                background: rgb(181,189,200);
+                background: -moz-linear-gradient(top, rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181,189,200,1)), color-stop(36%,rgba(130,140,149,1)), color-stop(100%,rgba(40,52,59,1)));
+                background: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+                background: -o-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+                background: -ms-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+                background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+            }
+            .flipper .fl-top{
+                border-radius: 4px 4px 0 0;
+            }
+            .flipper .fl-bottom{
+                border-radius: 0 0 4px 4px;
+            }
+            button.s{
+                background: #8F8;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h3>Flipper Word Play</h3>
+            <div>
+                <input type="text" id="word" maxlength="5" style="width:50px;" onkeyup="pulsar(this)" /><button id="change">Update</button><br />
+                <div id="letter1" class="letter"> </div>
+                <div id="letter2" class="letter"> </div>
+                <div id="letter3" class="letter"> </div>
+                <div id="letter4" class="letter"> </div>
+                <div id="letter5" class="letter"> </div>
+            </div>
+        </center>
+    </body>
+</html>

@@ -11,7 +11,11 @@
             var i=0;
             $('#number_go').click(function(){
                 i = (i+1)%10;
-                $('#number').flipper('update',i);
+                $('#display').text('Running');
+                $('#number').flipper('update',i,function(m){
+                    if(m) $('#display').text('Finished');
+                    else $('#display').text('Running - More Queued');
+                });
             });
 
             $('.change').click(function(){
@@ -73,6 +77,9 @@
                         <br /><br />
                         <button id="number_go">Change</button>
                     </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="display"></td>
                 </tr>
             </table>
         </center>

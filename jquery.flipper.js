@@ -73,164 +73,204 @@
             return false;
         }
      },
-     update: function( newtext ) {
+     update: function( newtext, callback ) {
         var $this = $(this);
         var o = $this.data().flipper;
         if(o.running){
-            o.queue.push(newtext);
+            o.queue.push([newtext,callback]);
             $this.data('flipper',o);
             return;
+        }else{
+            o.running = true;
+            methods._process(this,newtext,callback);
         }
-        o.running = true;
+        
+     },
+     _process:function(obj,newtext,callback){
+        var $this = $(obj);
+        var o = $this.data().flipper;
         $this.data('flipper',o);
-        $this.addClass('fl-animate');
-        $this.addClass('fl-go');
 
-        var finished = function(){
-            o.running = false;
+        animators[o.type](obj,newtext,function(){
             if(o.queue.length){
-                setTimeout(function(){$this.flipper('update',o.queue.shift())},1);
+                var q = o.queue.shift();
+                setTimeout(function(){methods._process(obj,q[0],q[1]);},1);
+                if(typeof(callback) == 'function') callback(false);
+            }else{
+                if(typeof(callback) == 'function') callback(true);
+                o.running = false;
                 $this.data('flipper',o);
             }
-        };
-       switch(o.type){
-            case 'fall':
-                $this.data().flipper.new1.text(newtext);
-                $this.data().flipper.new2.text(newtext);
-                if(o.speed=='slow') var t = 2000;
-                else if(o.speed=='normal') var t = 1000;
-                else if(o.speed=='fast') var t = 500;
-                setTimeout(function(){
-                    $this.removeClass('fl-animate');
-                    $this.data().flipper.cur1.text(newtext);
-                    $this.data().flipper.cur2.text(newtext);
-                    $this.data().flipper.new1.text('');
-                    $this.data().flipper.new2.text('');
-                    $this.removeClass('fl-go');
-                    finished();
-                },t);
-            break;
-            case 'rise':
-                $this.data().flipper.new1.text(newtext);
-                $this.data().flipper.new2.text(newtext);
-                if(o.speed=='slow') var t = 2000;
-                else if(o.speed=='normal') var t = 1000;
-                else if(o.speed=='fast') var t = 500;
-                setTimeout(function(){
-                    $this.removeClass('fl-animate');
-                    $this.data().flipper.cur1.text(newtext);
-                    $this.data().flipper.cur2.text(newtext);
-                    $this.data().flipper.new1.text('');
-                    $this.data().flipper.new2.text('');
-                    $this.removeClass('fl-go');
-                    finished();
-                },t);
-            break;
-            case 'slide':
-                $this.data().flipper.new1.text(newtext);
-                if(o.speed=='slow'){
-                    var t1 = 2000;
-                    var t2 = 1000;
-                }
-                else if(o.speed=='normal'){
-                    var t1 = 1000;
-                    var t2 = 500;
-                }
-                else if(o.speed=='fast'){
-                    var t1 = 500;
-                    var t2 = 250;
-                }
-                setTimeout(function(){
-                    $this.removeClass('fl-go').addClass('fl-zfix');
-                    $this.data().flipper.cur2.text(newtext);
-                },t2);
-                setTimeout(function(){
-                    $this.removeClass('fl-animate');
-                    $this.data().flipper.cur1.text(newtext);
-                    $this.data().flipper.new1.text('');
-                    $this.removeClass('fl-zfix');
-                    finished();
-                },t1);
-            break;
-            case 'clap':
-                $this.data().flipper.new1.text(newtext);
-                $this.data().flipper.new2.text($this.data().flipper.cur2.text());
-                $this.data().flipper.cur2.text(newtext);
-                if(o.speed=='slow') var t = 2000;
-                else if(o.speed=='normal') var t = 1000;
-                else if(o.speed=='fast') var t = 500;
-                setTimeout(function(){
-                    $this.removeClass('fl-animate');
-                    $this.data().flipper.cur1.text(newtext);
-                    $this.data().flipper.new1.text('');
-                    $this.data().flipper.new2.text('');
-                    $this.removeClass('fl-go');
-                    finished();
-                },t);
-            break;
-            case 'open':
-                $this.data().flipper.new1.text(newtext);
-                $this.data().flipper.new2.text(newtext);
-                if(o.speed=='slow'){
-                    var t1 = 2000;
-                    var t2 = 1000;
-                }
-                else if(o.speed=='normal'){
-                    var t1 = 1000;
-                    var t2 = 500;
-                }
-                else if(o.speed=='fast'){
-                    var t1 = 500;
-                    var t2 = 250;
-                }
-                setTimeout(function(){
-                    $this.addClass('fl-zfix');
-                },t2);
-                setTimeout(function(){
-                    $this.removeClass('fl-animate');
-                    $this.data().flipper.cur1.text(newtext);
-                    $this.data().flipper.cur2.text(newtext);
-                    $this.data().flipper.new1.text('');
-                    $this.data().flipper.new2.text('');
-                    $this.removeClass('fl-go').removeClass('fl-zfix');
-                    finished();
-                },t1);
-            break;
-            case 'close':
-                $this.data().flipper.new1.text($this.data().flipper.cur1.text());
-                $this.data().flipper.new2.text($this.data().flipper.cur2.text());
-                $this.data().flipper.cur1.text(newtext);
-                $this.data().flipper.cur2.text(newtext);
-                if(o.speed=='slow'){
-                    var t1 = 2000;
-                    var t2 = 1000;
-                }
-                else if(o.speed=='normal'){
-                    var t1 = 1000;
-                    var t2 = 500;
-                }
-                else if(o.speed=='fast'){
-                    var t1 = 500;
-                    var t2 = 250;
-                }
-                $this.addClass('fl-zfix');
-                setTimeout(function(){
-                    $this.removeClass('fl-zfix');
-                },t2);
-                setTimeout(function(){
-                    $this.removeClass('fl-animate');
-                    $this.data().flipper.cur1.text(newtext);
-                    $this.data().flipper.cur2.text(newtext);
-                    $this.data().flipper.new1.text('');
-                    $this.data().flipper.new2.text('');
-                    $this.removeClass('fl-go');
-                    finished();
-                },t1);
-            break;
-        }
-            
+        });
+     },
+     clearqueue: function(){
+        var $this = $(this);
+        var o = $this.data().flipper;
+        o.queue.length = 0;
+        $this.data('flipper',o);
      }
   };
+
+   var animators = {
+    fall:function(obj,newtext,finished){
+        var $this = $(obj);
+        var o = $this.data().flipper;
+        $this.addClass('fl-animate');
+        $this.addClass('fl-go');
+        o.new1.text(newtext);
+        o.new2.text(newtext);
+        if(o.speed=='slow') var t = 2000;
+        else if(o.speed=='normal') var t = 1000;
+        else if(o.speed=='fast') var t = 500;
+        setTimeout(function(){
+            $this.removeClass('fl-animate');
+            o.cur1.text(newtext);
+            o.cur2.text(newtext);
+            o.new1.text('');
+            o.new2.text('');
+            $this.removeClass('fl-go');
+            finished();
+        },t);
+    },
+    rise:function(obj,newtext,finished){
+        var $this = $(obj);
+        var o = $this.data().flipper;
+        $this.addClass('fl-animate');
+        $this.addClass('fl-go');
+        o.new1.text(newtext);
+        o.new2.text(newtext);
+        if(o.speed=='slow') var t = 2000;
+        else if(o.speed=='normal') var t = 1000;
+        else if(o.speed=='fast') var t = 500;
+        setTimeout(function(){
+            $this.removeClass('fl-animate');
+            o.cur1.text(newtext);
+            o.cur2.text(newtext);
+            o.new1.text('');
+            o.new2.text('');
+            $this.removeClass('fl-go');
+            finished();
+        },t);
+    },
+    clap:function(obj,newtext,finished){
+        var $this = $(obj);
+        var o = $this.data().flipper;
+        $this.addClass('fl-animate');
+        $this.addClass('fl-go');
+        o.new1.text(newtext);
+        o.new2.text(o.cur2.text());
+        o.cur2.text(newtext);
+        if(o.speed=='slow') var t = 2000;
+        else if(o.speed=='normal') var t = 1000;
+        else if(o.speed=='fast') var t = 500;
+        setTimeout(function(){
+            $this.removeClass('fl-animate');
+            o.cur1.text(newtext);
+            o.new1.text('');
+            o.new2.text('');
+            $this.removeClass('fl-go');
+            finished();
+        },t);
+
+    },
+    slide:function(obj,newtext,finished){
+        var $this = $(obj);
+        var o = $this.data().flipper;
+        $this.addClass('fl-animate');
+        $this.addClass('fl-go');
+        o.new1.text(newtext);
+        if(o.speed=='slow'){
+            var t1 = 2000;
+            var t2 = 1000;
+        }
+        else if(o.speed=='normal'){
+            var t1 = 1000;
+            var t2 = 500;
+        }
+        else if(o.speed=='fast'){
+            var t1 = 500;
+            var t2 = 250;
+        }
+        setTimeout(function(){
+            $this.removeClass('fl-go').addClass('fl-zfix');
+            o.cur2.text(newtext);
+        },t2);
+        setTimeout(function(){
+            $this.removeClass('fl-animate');
+            o.cur1.text(newtext);
+            o.new1.text('');
+            $this.removeClass('fl-zfix');
+            finished();
+        },t1);
+    },
+    open:function(obj,newtext,finished){
+        var $this = $(obj);
+        var o = $this.data().flipper;
+        $this.addClass('fl-animate');
+        $this.addClass('fl-go');
+        o.new1.text(newtext);
+        o.new2.text(newtext);
+        if(o.speed=='slow'){
+            var t1 = 2000;
+            var t2 = 1000;
+        }
+        else if(o.speed=='normal'){
+            var t1 = 1000;
+            var t2 = 500;
+        }
+        else if(o.speed=='fast'){
+            var t1 = 500;
+            var t2 = 250;
+        }
+        setTimeout(function(){
+            $this.addClass('fl-zfix');
+        },t2);
+        setTimeout(function(){
+            $this.removeClass('fl-animate');
+            o.cur1.text(newtext);
+            o.cur2.text(newtext);
+            o.new1.text('');
+            o.new2.text('');
+            $this.removeClass('fl-go').removeClass('fl-zfix');
+            finished();
+        },t1);
+    },
+    close:function(obj,newtext,finished){
+        var $this = $(obj);
+        var o = $this.data().flipper;
+        $this.addClass('fl-animate');
+        $this.addClass('fl-go');
+        o.new1.text(o.cur1.text());
+        o.new2.text(o.cur2.text());
+        o.cur1.text(newtext);
+        o.cur2.text(newtext);
+        if(o.speed=='slow'){
+            var t1 = 2000;
+            var t2 = 1000;
+        }
+        else if(o.speed=='normal'){
+            var t1 = 1000;
+            var t2 = 500;
+        }
+        else if(o.speed=='fast'){
+            var t1 = 500;
+            var t2 = 250;
+        }
+        $this.addClass('fl-zfix');
+        setTimeout(function(){
+            $this.removeClass('fl-zfix');
+        },t2);
+        setTimeout(function(){
+            $this.removeClass('fl-animate');
+            o.cur1.text(newtext);
+            o.cur2.text(newtext);
+            o.new1.text('');
+            o.new2.text('');
+            $this.removeClass('fl-go');
+            finished();
+        },t1);
+    }
+ };
 
   $.fn.flipper = function( method ) {
     
