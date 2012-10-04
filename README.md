@@ -34,9 +34,9 @@ There are only 2 options currently. Type and Speed.
 Methods
 -------
 
-update - `$(selector).flipper('update',newvalue[, callback]);` - Triggers animation, changes text to `newvalue`. If currently animating, queues new value to be animated. `callback` is a function that is called when the update to `newvalue` is complete with 1 argument which is `true` or `false`. `true` indicated all of the queue is complete, `false` indicates there are more items to be processed
-option - `$(selector).flipper('option',config,value);` - Changes the config `option` to `value`
-clearqueue - `$(selector).flipper('clearqueue');` - Clears any remaining changes in queue
+- update - `$(selector).flipper('update',newvalue[, callback]);` - Triggers animation, changes text to `newvalue`. If currently animating, queues new value to be animated. `callback` is a function that is called when the update to `newvalue` is complete with 1 argument which is `true` or `false`. `true` indicated all of the queue is complete, `false` indicates there are more items to be processed
+- option - `$(selector).flipper('option',config,value);` - Changes the config `option` to `value`
+- clearqueue - `$(selector).flipper('clearqueue');` - Clears any remaining changes in queue
 
 Usage
 -----
