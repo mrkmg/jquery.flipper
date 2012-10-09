@@ -35,6 +35,15 @@
     z-index: 2;
 }
 
+.flipper.fl-fall.fl-animate.fl-super .fl-top {
+    transition: transform .025s ease-in;
+}
+
+.flipper.fl-fall.fl-animate.fl-super .fl-bottom {
+    transition: transform .025s ease-out;
+    transition-delay: .025s;
+}
+
 .flipper.fl-fall.fl-animate.fl-fast .fl-top {
     transition: transform .25s ease-in;
 }
@@ -88,6 +97,15 @@
     z-index: 2;
 }
 
+.flipper.fl-rise.fl-animate.fl-super .fl-bottom {
+    transition: transform .025s ease-in;
+}
+
+.flipper.fl-rise.fl-animate.fl-super .fl-top {
+    transition: transform .025s ease-out;
+    transition-delay: .025s;
+}
+
 .flipper.fl-rise.fl-animate.fl-fast .fl-bottom {
     transition: transform .25s ease-in;
 }
@@ -139,6 +157,14 @@
 
 .flipper.fl-open .fl-show.fl-bottom {
     transform: perspective(500px) rotateX(360deg);
+}
+
+.flipper.fl-open.fl-animate.fl-super .fl-top {
+    transition: transform .05s linear;
+}
+
+.flipper.fl-open.fl-animate.fl-super .fl-bottom {
+    transition: transform .05s linear;
 }
 
 .flipper.fl-open.fl-animate.fl-fast .fl-top {
@@ -203,6 +229,14 @@
 
 .flipper.fl-close .fl-show.fl-bottom {
     transform: perspective(500px) rotateX(-360deg);
+}
+
+.flipper.fl-close.fl-animate.fl-super .fl-top {
+    transition: transform .05s linear;
+}
+
+.flipper.fl-close.fl-animate.fl-super .fl-bottom {
+    transition: transform .05s linear;
 }
 
 .flipper.fl-close.fl-animate.fl-fast .fl-top {
@@ -271,6 +305,14 @@
     z-index: 1;
 }
 
+.flipper.fl-clap.fl-animate.fl-super .fl-top {
+    transition: transform .05s ease-in;
+}
+
+.flipper.fl-clap.fl-animate.fl-super .fl-bottom {
+    transition: transform .05s ease-in;
+}
+
 .flipper.fl-clap.fl-animate.fl-fast .fl-top {
     transition: transform .5s ease-in;
 }
@@ -314,6 +356,14 @@
 
 .flipper.fl-slide.fl-zfix .fl-new.fl-top{
     z-index: 3;
+}
+
+.flipper.fl-slide.fl-animate.fl-super .fl-top {
+    transition: transform .25s ease-in;
+}
+
+.flipper.fl-slide.fl-animate.fl-super .fl-bottom {
+    transition: transform .25s ease-in;
 }
 
 .flipper.fl-slide.fl-animate.fl-fast .fl-top {

@@ -26,10 +26,11 @@ You can view a demos online
 Configuration
 -------------
 
-There are only 2 options currently. Type and Speed.
+There are three options currently. type, speed, and queueSuper.
 
-- Type: fall(Default), rise, open, close
-- Speed: slow, normal(Default), fast
+- `type`: fall(Default), rise, open, close :: Which animation to show
+- `speed`: slow, normal(Default), fast :: How fast the animation should run
+- `queueSuper`: true or false :: Whether or now the queue should run at super speed (see wordplay example for demo of queueSuper)
 
 Methods
 -------
@@ -51,7 +52,8 @@ JS
     //Initalize
     $('#number').flipper({
         type:'fall',
-        speed:'fast'
+        speed:'fast',
+        queueSuper:false
     });
 
     //Do animation, change from 0 to 1

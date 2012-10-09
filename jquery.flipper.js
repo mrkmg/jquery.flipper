@@ -13,7 +13,8 @@
          if ( ! data ) {
             var options = $.extend({
                 type:'fall',
-                speed:'normal'
+                speed:'normal',
+                queueSuper:true
             },o);
            $this
             .addClass('flipper')
@@ -34,7 +35,10 @@
                cur2:cur2,
                type:options.type,
                speed:options.speed,
+               queueSuper:options.queueSuper,
                running:false,
+               insuper:false,
+               presuperspeed:null,
                queue:[]
            });
          }
@@ -91,17 +95,33 @@
         var o = $this.data().flipper;
         $this.data('flipper',o);
 
-        animators[o.type](obj,newtext,function(){
-            if(o.queue.length){
-                var q = o.queue.shift();
-                setTimeout(function(){methods._process(obj,q[0],q[1]);},1);
-                if(typeof(callback) == 'function') callback(false);
-            }else{
-                if(typeof(callback) == 'function') callback(true);
-                o.running = false;
-                $this.data('flipper',o);
-            }
-        });
+        console.log(o.insuper,o.queue.length);
+        if(o.queueSuper &&!o.insuper && o.queue.length){
+            var oldspeed = o.speed;
+            o.speed = 'super';
+            $this.removeClass('fl-'+oldspeed).addClass('fl-super');
+            o.oldspeed = oldspeed;
+            o.insuper = true;
+            $this.data('flipper',o);
+        }else if(o.queueSuper && o.insuper && !o.queue.length){
+            o.speed = o.oldspeed;
+            $this.removeClass('fl-super').addClass('fl-'+o.speed);
+            o.insuper = false;
+            $this.data('flipper',o);
+        }
+        setTimeout(function(){
+            animators[o.type](obj,newtext,function(){
+                if(o.queue.length){
+                    var q = o.queue.shift();
+                    setTimeout(function(){methods._process(obj,q[0],q[1]);},1);
+                    if(typeof(callback) == 'function') callback(false);
+                }else{
+                    if(typeof(callback) == 'function') callback(true);
+                    o.running = false;
+                    $this.data('flipper',o);
+                }
+            });
+        },1);
      },
      clearqueue: function(){
         var $this = $(this);
@@ -122,6 +142,7 @@
         if(o.speed=='slow') var t = 2000;
         else if(o.speed=='normal') var t = 1000;
         else if(o.speed=='fast') var t = 500;
+        else if(o.speed=='super') var t = 50;
         setTimeout(function(){
             $this.removeClass('fl-animate');
             o.cur1.text(newtext);
@@ -142,6 +163,7 @@
         if(o.speed=='slow') var t = 2000;
         else if(o.speed=='normal') var t = 1000;
         else if(o.speed=='fast') var t = 500;
+        else if(o.speed=='super') var t = 50;
         setTimeout(function(){
             $this.removeClass('fl-animate');
             o.cur1.text(newtext);
@@ -163,6 +185,7 @@
         if(o.speed=='slow') var t = 2000;
         else if(o.speed=='normal') var t = 1000;
         else if(o.speed=='fast') var t = 500;
+        else if(o.speed=='super') var t = 50;
         setTimeout(function(){
             $this.removeClass('fl-animate');
             o.cur1.text(newtext);
@@ -190,6 +213,10 @@
         else if(o.speed=='fast'){
             var t1 = 500;
             var t2 = 250;
+        }
+        else if(o.speed=='super'){
+            var t1 = 50;
+            var t2 = 25;
         }
         setTimeout(function(){
             $this.removeClass('fl-go').addClass('fl-zfix');
@@ -221,6 +248,10 @@
         else if(o.speed=='fast'){
             var t1 = 500;
             var t2 = 250;
+        }
+        else if(o.speed=='super'){
+            var t1 = 50;
+            var t2 = 25;
         }
         setTimeout(function(){
             $this.addClass('fl-zfix');
@@ -255,6 +286,10 @@
         else if(o.speed=='fast'){
             var t1 = 500;
             var t2 = 250;
+        }
+        else if(o.speed=='super'){
+            var t1 = 50;
+            var t2 = 25;
         }
         $this.addClass('fl-zfix');
         setTimeout(function(){

@@ -8,12 +8,14 @@
         <script>
 
         var oldval = '';
+        var timedout = null;
         function pulsar(obj) {
-            var newval = obj.value.toUpperCase()
+            var newval = obj.value.toUpperCase();
             if(oldval != newval){
+                clearTimeout(timedout);
                 oldval=newval;
                 obj.value=newval;
-                doChange();
+                timedout = setTimeout(doChange,200);
             }
         }
         var letterList = 
@@ -50,7 +52,10 @@
                         var forward = (listlength - oldIndex) + newIndex;
                         var backward  = oldIndex - newIndex;
                     }
-                    var direction = forward <= backward;
+                    /* Forward and backward */
+                    //var direction = forward <= backward;
+                    /* Forward only */
+                    var direction = true;
                     if(direction){
                         $('#letter'+i).flipper('option','type','fall');
                     }else{

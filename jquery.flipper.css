@@ -26,7 +26,7 @@
     -moz-transform: perspective(500px) rotatex(-90deg);
     -ms-transform: perspective(500px) rotatex(-90deg);
     -o-transform: perspective(500px) rotatex(-90deg);
-    -webkit-transform: perspective(500px) rotatex(-96deg);
+    -webkit-transform: perspective(500px) rotatex(-90deg);
     transform: perspective(500px) rotatex(-90deg)
     }
 
@@ -45,6 +45,24 @@
     -webkit-transform: perspective(500px) rotatex(90deg);
     transform: perspective(500px) rotatex(90deg);
     z-index: 2
+    }
+
+.flipper.fl-fall.fl-animate.fl-super .fl-top {
+    -moz-transition: -moz-transform 0.025s ease-in;
+    -o-transition: -o-transform 0.025s ease-in;
+    -webkit-transition: -webkit-transform 0.025s ease-in;
+    transition: transform 0.025s ease-in
+    }
+
+.flipper.fl-fall.fl-animate.fl-super .fl-bottom {
+    -moz-transition: -moz-transform 0.025s ease-out;
+    -o-transition: -o-transform 0.025s ease-out;
+    -webkit-transition: -webkit-transform 0.025s ease-out;
+    transition: transform 0.025s ease-out;
+    -moz-transition-delay: 0.025s;
+    -o-transition-delay: 0.025s;
+    -webkit-transition-delay: 0.025s;
+    transition-delay: 0.025s
     }
 
 .flipper.fl-fall.fl-animate.fl-fast .fl-top {
@@ -141,9 +159,27 @@
     -moz-transform: perspective(500px) rotatex(-90deg);
     -ms-transform: perspective(500px) rotatex(-90deg);
     -o-transform: perspective(500px) rotatex(-90deg);
-    -webkit-transform: perspective(500px) rotatex(83deg);
+    -webkit-transform: perspective(500px) rotatex(-90deg);
     transform: perspective(500px) rotatex(-90deg);
     z-index: 2
+    }
+
+.flipper.fl-rise.fl-animate.fl-super .fl-bottom {
+    -moz-transition: -moz-transform 0.025s ease-in;
+    -o-transition: -o-transform 0.025s ease-in;
+    -webkit-transition: -webkit-transform 0.025s ease-in;
+    transition: transform 0.025s ease-in
+    }
+
+.flipper.fl-rise.fl-animate.fl-super .fl-top {
+    -moz-transition: -moz-transform 0.025s ease-out;
+    -o-transition: -o-transform 0.025s ease-out;
+    -webkit-transition: -webkit-transform 0.025s ease-out;
+    transition: transform 0.025s ease-out;
+    -moz-transition-delay: 0.025s;
+    -o-transition-delay: 0.025s;
+    -webkit-transition-delay: 0.025s;
+    transition-delay: 0.025s
     }
 
 .flipper.fl-rise.fl-animate.fl-fast .fl-bottom {
@@ -244,6 +280,20 @@
     transform: perspective(500px) rotatex(360deg)
     }
 
+.flipper.fl-open.fl-animate.fl-super .fl-top {
+    -moz-transition: -moz-transform 0.05s linear;
+    -o-transition: -o-transform 0.05s linear;
+    -webkit-transition: -webkit-transform 0.05s linear;
+    transition: transform 0.05s linear
+    }
+
+.flipper.fl-open.fl-animate.fl-super .fl-bottom {
+    -moz-transition: -moz-transform 0.05s linear;
+    -o-transition: -o-transform 0.05s linear;
+    -webkit-transition: -webkit-transform 0.05s linear;
+    transition: transform 0.05s linear
+    }
+
 .flipper.fl-open.fl-animate.fl-fast .fl-top {
     -moz-transition: -moz-transform 0.5s linear;
     -o-transition: -o-transform 0.5s linear;
@@ -342,6 +392,20 @@
     -o-transform: perspective(500px) rotatex(-360deg);
     -webkit-transform: perspective(500px) rotatex(-360deg);
     transform: perspective(500px) rotatex(-360deg)
+    }
+
+.flipper.fl-close.fl-animate.fl-super .fl-top {
+    -moz-transition: -moz-transform 0.05s linear;
+    -o-transition: -o-transform 0.05s linear;
+    -webkit-transition: -webkit-transform 0.05s linear;
+    transition: transform 0.05s linear
+    }
+
+.flipper.fl-close.fl-animate.fl-super .fl-bottom {
+    -moz-transition: -moz-transform 0.05s linear;
+    -o-transition: -o-transform 0.05s linear;
+    -webkit-transition: -webkit-transform 0.05s linear;
+    transition: transform 0.05s linear
     }
 
 .flipper.fl-close.fl-animate.fl-fast .fl-top {
@@ -446,6 +510,20 @@
     z-index: 1
     }
 
+.flipper.fl-clap.fl-animate.fl-super .fl-top {
+    -moz-transition: -moz-transform 0.05s ease-in;
+    -o-transition: -o-transform 0.05s ease-in;
+    -webkit-transition: -webkit-transform 0.05s ease-in;
+    transition: transform 0.05s ease-in
+    }
+
+.flipper.fl-clap.fl-animate.fl-super .fl-bottom {
+    -moz-transition: -moz-transform 0.05s ease-in;
+    -o-transition: -o-transform 0.05s ease-in;
+    -webkit-transition: -webkit-transform 0.05s ease-in;
+    transition: transform 0.05s ease-in
+    }
+
 .flipper.fl-clap.fl-animate.fl-fast .fl-top {
     -moz-transition: -moz-transform 0.5s ease-in;
     -o-transition: -o-transform 0.5s ease-in;
@@ -518,6 +596,20 @@
 
 .flipper.fl-slide.fl-zfix .fl-new.fl-top {
     z-index: 3
+    }
+
+.flipper.fl-slide.fl-animate.fl-super .fl-top {
+    -moz-transition: -moz-transform 0.25s ease-in;
+    -o-transition: -o-transform 0.25s ease-in;
+    -webkit-transition: -webkit-transform 0.25s ease-in;
+    transition: transform 0.25s ease-in
+    }
+
+.flipper.fl-slide.fl-animate.fl-super .fl-bottom {
+    -moz-transition: -moz-transform 0.25s ease-in;
+    -o-transition: -o-transform 0.25s ease-in;
+    -webkit-transition: -webkit-transform 0.25s ease-in;
+    transition: transform 0.25s ease-in
     }
 
 .flipper.fl-slide.fl-animate.fl-fast .fl-top {
