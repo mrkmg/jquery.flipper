@@ -1,0 +1,26 @@
+{
+    "name": "flipper",
+    "version": "1.2",
+    "title": "jQuery.flipper()",
+    "author": {
+        "name": "Kevin Gravier",
+        "url": "https://github.com/mrkmg",
+        "email": "kevin@mrkmg.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.github.com/mrkmg/jquery.flipper/master/license"
+        },
+    ],
+    "dependencies": {
+        "jquery": ">=1.6"
+    },
+    "description": "Flipper uses CSS3 transitions to animate text in a retro-clock like animations, along with other included type.",
+    "keywords": [
+        "animation",
+        "retro clock",
+        "css3"
+    ],
+    "homepage": "https://github.com/mrkmg/jquery.flipper"
+}
