@@ -85,11 +85,11 @@
 /* Rise Transition */
 
 .flipper.fl-rise.fl-go .fl-show.fl-bottom{
-    transform: perspective(500px) rotateX(-90deg);
+    transform: perspective(500px) rotateX(90deg);
 }
 
 .flipper.fl-rise.fl-go .fl-new.fl-top {
-    transform: perspective(500px) rotateX(-0deg);
+    transform: perspective(500px) rotateX(0deg);
 }
 
 .flipper.fl-rise .fl-new.fl-top {

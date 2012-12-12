@@ -140,11 +140,11 @@
 
 /* Rise Transition */
 .flipper.fl-rise.fl-go .fl-show.fl-bottom {
-    -moz-transform: perspective(500px) rotatex(-90deg);
-    -ms-transform: perspective(500px) rotatex(-90deg);
-    -o-transform: perspective(500px) rotatex(-90deg);
-    -webkit-transform: perspective(500px) rotatex(-90deg);
-    transform: perspective(500px) rotatex(-90deg)
+    -moz-transform: perspective(500px) rotatex(90deg);
+    -ms-transform: perspective(500px) rotatex(90deg);
+    -o-transform: perspective(500px) rotatex(90deg);
+    -webkit-transform: perspective(500px) rotatex(90deg);
+    transform: perspective(500px) rotatex(90deg)
     }
 
 .flipper.fl-rise.fl-go .fl-new.fl-top {
